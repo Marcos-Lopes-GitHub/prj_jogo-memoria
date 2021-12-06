@@ -54,3 +54,14 @@ body {
  .card.flip{
    transform: rotateY(180deg);
  }
+
+ .score {
+   display: flex;
+   align-items: center;
+   align-content: center;
+   padding: 20px;
+   font-size: 50px;
+   width: 200px;
+   height: 100px;
+   background-color: yellowgreen;
+ }

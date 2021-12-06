@@ -1,10 +1,13 @@
-const cards = document.querySelectorAll('.card')
+const cards = document.querySelectorAll('.card');
+let countClick= 0;
 let hasFlippedCard = false;
 let firstCard , secondCard;
 let lockBoard = false;
 
 function flipCard(){
     if(lockBoard) return;
+    countClick++;
+    document.getElementById("pontos").innerHTML = countClick;
     if(this === firstCard) return;
 
     this.classList.add('flip');

@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+#pontos {
+  background-color: yellowgreen;
+  width:100px;
+  height: 50px;
+  font-size: 30px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
 body {
   height: 100vh;
   display:flex;

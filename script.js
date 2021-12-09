@@ -3,10 +3,36 @@ let countClick= 0;
 let hasFlippedCard = false;
 let firstCard , secondCard;
 let lockBoard = false;
+const flippedCard = document.getElementsByClassName("card flip");
+
+cardsTurnOn();
+setTimeout(function(){
+    cardsTurnOff();
+},3000)
+function countFlippedCard(){
+    return flippedCard.length;
+}
+
+function cardsTurnOn(){
+    cards.forEach((card)=>{
+        card.className="card flip"
+    })
+}
+
+function cardsTurnOff(){
+    cards.forEach((card)=>{
+        card.className="card"
+    })
+}
+
+function clicked(){
+    return countClick++;
+}
 
 function flipCard(){
     if(lockBoard) return;
-    countClick++;
+    // countClick++;
+    clicked();
     document.getElementById("pontos").innerHTML = countClick;
     if(this === firstCard) return;
 
@@ -16,10 +42,12 @@ function flipCard(){
         firstCard = this;
         return;
     }
-
     secondCard = this;
     hasFlippedCard = false;
     checkForMatch();
+    if (countFlippedCard()=== 12){
+        gameOver();
+    }
 }
 
 function checkForMatch(){
@@ -51,13 +79,17 @@ function resetBoard(){
 }
 
 (
-function shuffle(){
-    cards.forEach((card) => {
-        let randomPosition = Math.floor(Math.random() * 12);
-        card.style.order = randomPosition;
-    })
-})();
+    function shuffle(){
+        cards.forEach((card) => {
+            let randomPosition = Math.floor(Math.random() * 12);
+            card.style.order = randomPosition;
+        })
+    })();
 
 cards.forEach((card) =>{
     card.addEventListener('click', flipCard)
 })
+
+function gameOver(){
+    console.log("Fim de Jogo")
+}

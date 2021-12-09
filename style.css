@@ -43,7 +43,7 @@ body {
 
 .card:active {
   transform: scale(0.97);
-  transition: transform .2s;
+  transition: transform .3s;
 }
 
 .card-front,
@@ -53,7 +53,7 @@ body {
   padding: 20px;
   position: absolute;
   border-radius: 5px;
-  background: #ffffff;
+  background: #ccee44;
   backface-visibility: hidden ;
 }
  .card-front {

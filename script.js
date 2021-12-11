@@ -5,6 +5,7 @@ let firstCard , secondCard;
 let lockBoard = false;
 const flippedCard = document.getElementsByClassName("card flip");
 
+
 cardsTurnOn();
 setTimeout(function(){
     cardsTurnOff();
@@ -91,5 +92,14 @@ cards.forEach((card) =>{
 })
 
 function gameOver(){
-    console.log("Fim de Jogo")
+    document.getElementById("board-game").innerHTML=("GAME OVER");
+    // const div = document.getElementById("board-game")
+    // div.style.width = "100px";
+    // div.style.height = "100px";
+    // div.style.background = "#87CEFA";
+    // div.style.textAlign="center"
+    // div.style.color = "white";
+    // div.style.fontSize="20px";
+    // div.innerHTML = "Hello";
+    // console.log("Fim de Jogo")
 }
